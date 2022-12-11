@@ -104,11 +104,19 @@ function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#card-text-temp");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-
   tempElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#card-text-temp");
+  tempElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let CelsiusLink = document.querySelector("#celsius-link");
+CelsiusLink.addEventListener("click", displayCelsiusTemperature);
