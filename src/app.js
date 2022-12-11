@@ -50,9 +50,11 @@ liveDayTime();
 function displayTemp(response) {
   let showCity = document.querySelector("#current-city");
   showCity.innerHTML = response.data.name;
-  let temp = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#card-text-temp");
-  tempElement.innerHTML = `${temp}`;
+
+  celsiusTemperature = response.data.main.temp;
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].main;
   let iconElement = document.querySelector("#icon");
@@ -97,3 +99,16 @@ function getCurrentPosition(event) {
 
 let button = document.querySelector("#exampleInputLocation1");
 button.addEventListener("click", getCurrentPosition);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#card-text-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  tempElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
