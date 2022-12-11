@@ -48,11 +48,14 @@ function liveDayTime() {
 liveDayTime();
 
 function displayTemp(response) {
+  console.log(response);
   let showCity = document.querySelector("#current-city");
   showCity.innerHTML = response.data.name;
   let temp = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#card-text-temp");
   tempElement.innerHTML = `${temp}°`;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].main;
 }
 
 function searchCity(city) {
