@@ -12,26 +12,37 @@ function liveDayTime() {
   }
   let year = now.getFullYear();
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = days[now.getDay()];
 
   let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
+    "January",
+    "February",
+    "March",
+    "April",
     "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   let month = months[now.getMonth()];
 
   let showCurrentDay = document.querySelector("#current-day");
-  showCurrentDay.innerHTML = `${day}, ${date} ${month} ${year} | ${hour}:${minutes}`;
+  showCurrentDay.innerHTML = `${day}, ${date} ${month} ${year}`;
+  let showCurrentTime = document.querySelector("#current-time");
+  showCurrentTime.innerHTML = `${hour}:${minutes}`;
 }
+
 liveDayTime();

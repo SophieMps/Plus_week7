@@ -56,3 +56,20 @@ li {
 a {
   text-decoration: none;
 }
+#search-button {
+  width: 100%;
+  background-color: #dadce0;
+  border: none;
+  color: #878787;
+}
+
+#exampleInputLocation1 {
+  width: 100%;
+  background-color: #dadce0;
+  border: none;
+  color: #878787;
+}
+
+button:hover {
+  transition-duration: 0.4s;
+}
