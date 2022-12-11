@@ -48,14 +48,19 @@ function liveDayTime() {
 liveDayTime();
 
 function displayTemp(response) {
-  console.log(response);
   let showCity = document.querySelector("#current-city");
   showCity.innerHTML = response.data.name;
   let temp = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#card-text-temp");
-  tempElement.innerHTML = `${temp}°`;
+  tempElement.innerHTML = `${temp}`;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].main;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].main);
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
   let windElement = document.querySelector("#wind");

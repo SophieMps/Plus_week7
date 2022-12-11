@@ -54,6 +54,8 @@ li {
 }
 
 a {
+  color: #878787;
+  font-weight: bold;
   text-decoration: none;
 }
 #search-button {
@@ -70,6 +72,6 @@ a {
   color: #878787;
 }
 
-button:hover {
-  transition-duration: 0.4s;
+small {
+  color: #878787;
 }
