@@ -83,12 +83,13 @@ if (index<6){
               </ div>
          
   `;
+}
   });
-  }
+ 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 
-  }
+  
 function getForecast(coordinates) {
   let apiKey = "12bdbd86bcab685847fea4f4c4d743cf";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
