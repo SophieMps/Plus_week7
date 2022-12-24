@@ -47,6 +47,11 @@ function liveDayTime() {
 
 liveDayTime();
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = "Forecast";
+}
+
 function displayTemp(response) {
   let showCity = document.querySelector("#current-city");
   showCity.innerHTML = response.data.name;
@@ -126,3 +131,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayForecast();
