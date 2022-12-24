@@ -67,8 +67,6 @@ function displayForecast(response) {
   forecast.forEach(function (forecastDay, index) {
 if (index<6){
 
-
-
     forecastHTML =
       forecastHTML +
       ` 
@@ -88,7 +86,7 @@ if (index<6){
  
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-
+}
   
 function getForecast(coordinates) {
   let apiKey = "12bdbd86bcab685847fea4f4c4d743cf";
