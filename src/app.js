@@ -50,11 +50,13 @@ liveDayTime();
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    ` 
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
                           <div class="col-2">
-                <div class="weather-forecast-date">Thu</div>
+                <div class="weather-forecast-date">${day}</div>
                 <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="42"/>
                 <div class="weather-forecast-temperature">
                   <span clas="weather-forecast-temperature-max">18°</span>
@@ -63,7 +65,7 @@ function displayForecast() {
               </div>
          
   `;
-
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
