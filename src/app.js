@@ -48,19 +48,21 @@ function liveDayTime() {
 liveDayTime();
 
 function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       ` 
                           <div class="col-2">
-                <div class="weather-forecast-date">${day}</div>
-                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="42"/>
+                <div class="weather-forecast-date">${forecastDay.dt}</div>
+                <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42"/>
                 <div class="weather-forecast-temperature">
-                  <span clas="weather-forecast-temperature-max">18°</span>
-                  <span class="weather-forecast-temperature-min">12°</span>
+                  <span clas="weather-forecast-temperature-max">${forecastDay.temp.max}°</span>
+                  <span class="weather-forecast-temperature-min">${forecastDay.temp.min}°</span>
                 </div>
               </div>
          
