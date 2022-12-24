@@ -52,9 +52,8 @@ function displayForecast() {
   let forecastHTML = `<div class="row">`;
   forecastHTML =
     forecastHTML +
-    ` <div class="weather-forecast" id="forecast">
-            
-              <div class="col-2">
+    ` 
+                          <div class="col-2">
                 <div class="weather-forecast-date">Thu</div>
                 <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="42"/>
                 <div class="weather-forecast-temperature">
@@ -62,8 +61,22 @@ function displayForecast() {
                   <span class="weather-forecast-temperature-min">12°</span>
                 </div>
               </div>
-          </div>
+         
   `;
+  forecastHTML =
+    forecastHTML +
+    ` 
+                          <div class="col-2">
+                <div class="weather-forecast-date">Thu</div>
+                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="42"/>
+                <div class="weather-forecast-temperature">
+                  <span clas="weather-forecast-temperature-max">18°</span>
+                  <span class="weather-forecast-temperature-min">12°</span>
+                </div>
+              </div>
+          
+  `;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
