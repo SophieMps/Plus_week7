@@ -49,9 +49,11 @@ liveDayTime();
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
-  <div class="weather-forecast" id="forecast">
-            <div class="row">
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    ` <div class="weather-forecast" id="forecast">
+            
               <div class="col-2">
                 <div class="weather-forecast-date">Thu</div>
                 <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="42"/>
@@ -60,9 +62,9 @@ function displayForecast() {
                   <span class="weather-forecast-temperature-min">12°</span>
                 </div>
               </div>
-            </div>
           </div>
   `;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayTemp(response) {
