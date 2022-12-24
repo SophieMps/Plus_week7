@@ -70,6 +70,10 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+}
+
 function displayTemp(response) {
   let showCity = document.querySelector("#current-city");
   showCity.innerHTML = response.data.name;
@@ -90,6 +94,8 @@ function displayTemp(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
